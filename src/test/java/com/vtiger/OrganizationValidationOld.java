@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class OrganizationValidationNew {
+public class OrganizationValidationOld {
 	
 	public static void main(String[]args) throws InterruptedException {
  	     

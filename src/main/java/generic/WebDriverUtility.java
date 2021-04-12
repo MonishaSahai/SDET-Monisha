@@ -12,6 +12,7 @@ package generic;
 	import org.openqa.selenium.support.ui.ExpectedConditions;
 	import org.openqa.selenium.support.ui.Select;
 	import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 	
 	public class WebDriverUtility
@@ -130,7 +131,7 @@ package generic;
 		 * @param driver
 		 * @param windowtitleexp
 		 */
-		public void switchtochildwindow(WebDriver driver, String windowtitleexp) 
+		public void switchtochildwindow1(WebDriver driver, String windowtitleexp) 
 		{
 			Set<String> set=driver.getWindowHandles();
 			Iterator<String> it = set.iterator();
@@ -146,8 +147,32 @@ package generic;
 				}
 			}
 		}
+		
 		/**
-		 * Wait for elemet until it is displayed
+		 * Switch to desired windows
+		 * @param driver
+		 * @param windowtitleexp
+		 */
+		public void switchToChildWindow(WebDriver driver,String expt) 
+		{
+			Set<String> allId = driver.getWindowHandles();
+			Iterator<String> it = allId.iterator();
+            while(it.hasNext()) 
+			{
+				String id = it.next();
+				driver.switchTo().window(id);
+				System.out.println("switched");
+				String wintitle = driver.getTitle();
+				if(wintitle.contains(expt)) {
+					break;
+				}
+			}
+				//driver.switchTo().window(mainId);
+			
+	 
+		}
+		/**
+		 * Wait for element until it is displayed
 		 * @param element
 		 * @throws InterruptedException
 		 */
@@ -167,7 +192,7 @@ package generic;
 			}
 		}
 		/**
-		 * Wait for element and once availabel click on it.
+		 * Wait for element and once available click on it.
 		 * @param driver
 		 * @param xpath
 		 * @throws InterruptedException
@@ -186,7 +211,16 @@ package generic;
 				count++;
 			}
 		}
-
-
-	
+		
+		/**
+		 * for Validation of script.
+		 * @param actual String
+		 * @param expexcted String
+		 */
+		public void testAssertion(String actual,String exp)
+		{
+			Assert.assertEquals(actual, exp);
+		}
+		
+		
 }

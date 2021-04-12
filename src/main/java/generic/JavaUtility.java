@@ -15,7 +15,7 @@ package generic;
 		public int createRandomNumber() 
 		{
 			Random r = new Random();
-			int randomnumber= r.nextInt(10000);
+			int randomnumber= r.nextInt(9999);
 			return randomnumber;
 		}
 
