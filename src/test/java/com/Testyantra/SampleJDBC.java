@@ -25,7 +25,7 @@ public class SampleJDBC {
         Statement stat = con.createStatement();
         
         //Step4: execute query,
-        ResultSet result=stat.executeQuery("Select*from Testyantra");
+        ResultSet result=stat.executeQuery("Select*from Testyantra ");
         
         while (result.next()) {
         	System.out.println(result.getString(1)+"\t"+result.getString(2));
