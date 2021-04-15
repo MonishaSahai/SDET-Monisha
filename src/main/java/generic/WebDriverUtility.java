@@ -153,17 +153,17 @@ import org.testng.Assert;
 		 * @param driver
 		 * @param windowtitleexp
 		 */
-		public void switchToChildWindow(WebDriver driver,String expt) 
+		public void switchToChildWindow(WebDriver driver,String ExpectedTitle) 
 		{
-			Set<String> allId = driver.getWindowHandles();
-			Iterator<String> it = allId.iterator();
+			Set<String> allTitle = driver.getWindowHandles();
+			Iterator<String> it = allTitle.iterator();
             while(it.hasNext()) 
 			{
-				String id = it.next();
-				driver.switchTo().window(id);
+				String Title = it.next();
+				driver.switchTo().window(Title);
 				System.out.println("switched");
 				String wintitle = driver.getTitle();
-				if(wintitle.contains(expt)) {
+				if(wintitle.contains(ExpectedTitle)) {
 					break;
 				}
 			}
@@ -221,6 +221,12 @@ import org.testng.Assert;
 		{
 			Assert.assertEquals(actual, exp);
 		}
-		
+		/**
+		 * Close the browser
+		 */
+		public void quit(WebDriver driver) 
+		{
+			driver.quit();
+		}
 		
 }
