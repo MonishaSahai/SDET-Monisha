@@ -17,6 +17,8 @@ import generic.WebDriverUtility;
 import objectRepo.ContactPOMPage;
 import objectRepo.HomePOMPage;
 import objectRepo.LoginPOMPage;
+import objectRepo.ContactINPOMPage;
+
 
 public class ContactIntegrationPOMPage {
       
@@ -26,6 +28,7 @@ public class ContactIntegrationPOMPage {
 		WebDriverUtility wdu = new WebDriverUtility();
 		ExcelUtility eu = new ExcelUtility();
 		
+
 		@Test
 		public void createcontact() throws IOException, InterruptedException {
             
@@ -57,21 +60,24 @@ public class ContactIntegrationPOMPage {
 			
 			ContactPOMPage cp = new ContactPOMPage(driver);
 			cp.getCreatecontactbtn().click();
-			
-			ContactIntegrationPOMPage cip = new ContactIntegrationPOMPage();
-			cip.getLastnametb().sendKeys(lastname);
-    	   	driver.findElement(By.xpath("//img[@title='Select'][1]")).click();
+			//contact creation
+		    ContactINPOMPage cip = new ContactINPOMPage(driver);
+		    cip.getLastnametb().sendKeys(lastname);
+    	   	cip.getOrgbtn().click();
     	   	
     	   	//Window Handle
-    	   	                                                                   
     	   	wdu.switchToChildWindow(driver,"childwin");
-    	   	driver.findElement(By.xpath("//input[@id='search_txt']")).sendKeys("Test1");
-    	   	driver.findElement(By.xpath("//input[@name='search']")).click();
-    	    driver.findElement(By.xpath("//table[contains(@style,'background-color')]/tbody/tr[2]//a")).click();
-    	   	wdu.switchToChildWindow(driver,"mainwin");
-    	   	driver.findElement(By.xpath("//table[@class='dvtContentSpace']//tbody//tbody//tbody/tr[5]/td[4]/input")).sendKeys(mobnum);
-    	   	driver.findElement(By.xpath("//table[@class='dvtContentSpace']//tbody//tbody//tbody/tr[4]/td[2]/input")).sendKeys(lastname);
-    	   	driver.findElement(By.xpath("//input[@type='submit'][1]")).click();
+    	   	//childwindow
+    	   	
+    	   	cip.getSearchtb().sendKeys("Test1");
+    	   	cip.getSearchbtn().click();
+    	    cip.getOrglink().click();
+    	    //mainwindow
+    	    
+    	   	wdu.switchToChildWindow(driver,"mainwin");    	   	
+    	   	cip.getMobtb().sendKeys(mobnum);
+    	   	cip.getLastname1().sendKeys(lastname);
+    	   	cip.getClickbtn().click();
     	   	WebElement title  = driver.findElement(By.xpath("//span[@class='dvHeaderText']"));
     	   		   
     	   	if(driver.getTitle().contains("Contacts")){
@@ -85,10 +91,7 @@ public class ContactIntegrationPOMPage {
     	                wdu.quit(driver);
     	   		}
 
-		private Object getLastnametb() {
-			// TODO Auto-generated method stub
-			return null;
-		}
+	
     	   		
 	
 	

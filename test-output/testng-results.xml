@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-14T00:16:54 IST" name="Default suite" finished-at="2021-04-14T00:17:19 IST" duration-ms="24233">
+  <suite started-at="2021-04-16T11:24:35 IST" name="Default suite" finished-at="2021-04-16T11:25:03 IST" duration-ms="27615">
     <groups>
     </groups>
-    <test started-at="2021-04-14T00:16:54 IST" name="Default test" finished-at="2021-04-14T00:17:19 IST" duration-ms="24233">
-      <class name="com.Testyantra.ClickallCheckboxes">
-        <test-method signature="checkAllCheckBoxes()[pri:0, instance:com.Testyantra.ClickallCheckboxes@26275bef]" started-at="2021-04-14T00:16:55 IST" name="checkAllCheckBoxes" finished-at="2021-04-14T00:17:19 IST" duration-ms="24165" status="PASS">
+    <test started-at="2021-04-16T11:24:35 IST" name="Default test" finished-at="2021-04-16T11:25:03 IST" duration-ms="27615">
+      <class name="com.vtiger.ContactIntegrationPOMPage">
+        <test-method signature="createcontact()[pri:0, instance:com.vtiger.ContactIntegrationPOMPage@61386958]" started-at="2021-04-16T11:24:35 IST" name="createcontact" finished-at="2021-04-16T11:25:03 IST" duration-ms="27531" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkAllCheckBoxes -->
-      </class> <!-- com.Testyantra.ClickallCheckboxes -->
+        </test-method> <!-- createcontact -->
+      </class> <!-- com.vtiger.ContactIntegrationPOMPage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
