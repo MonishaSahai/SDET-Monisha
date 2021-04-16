@@ -4,10 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+import generic.WebDriverUtility;
 public class HomePOMPage {
 	
 	WebDriver driver;
+	WebDriverUtility wdu;
 	
 	@FindBy(xpath="//a[text()='Organizations']")
     private WebElement orgbtn;
@@ -53,12 +54,7 @@ public class HomePOMPage {
     
     @FindBy(xpath="//td[contains(@onmouseout,'fnHideDrop')][1]")
     private WebElement logoutbtn;
-    
-    public WebElement getLogout()
-    {
- 	   return logoutbtn;
-    }
-    
+      
     @FindBy(xpath="//a[text()='Sign Out']")
     private WebElement signoutbtn;
     
@@ -69,7 +65,7 @@ public class HomePOMPage {
     
     public void logoutFromApp()
     {
-    	getLogout().click();
+    	wdu.movetoelement(driver, logoutbtn);
     	getSignout().click();
     }
     
