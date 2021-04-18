@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import generic.BaseClass;
 import generic.ExcelUtility;
 import generic.FileUtility;
 import generic.Iconstants;
@@ -16,7 +17,7 @@ import objectRepo.HomePOMPage;
 import objectRepo.LoginPOMPage;
 import objectRepo.OrgPOMPage;
 
-public class CreateOrgPOM {
+public class CreateOrgPOM extends BaseClass {
 	
 	JavaUtility jv = new JavaUtility();
 	FileUtility fu=  new FileUtility();
@@ -27,10 +28,10 @@ public class CreateOrgPOM {
 		int randomnumber=	jv.createRandomNumber();
 
 
-		//Read data from property file
-		String UN=fu.readDatafrompropfile(Iconstants.propfilepath, "username");
-		String PWD=fu.readDatafrompropfile(Iconstants.propfilepath, "password");
-		String URL=fu.readDatafrompropfile(Iconstants.propfilepath, "url");
+		                                                       //Read data from property file
+		                                                       /*String UN=fu.readDatafrompropfile(Iconstants.propfilepath, "username");
+		                                                         String PWD=fu.readDatafrompropfile(Iconstants.propfilepath, "password");
+		                                                         String URL=fu.readDatafrompropfile(Iconstants.propfilepath, "url");*/
 
 		//Read Test Script Data from Excel
 		String name=eu.readDatafromExcel("Sheet1", 0, 0);
@@ -40,18 +41,18 @@ public class CreateOrgPOM {
 		String ratingDD=eu.readDatafromExcel("Sheet1", 3, 0);
 		String typeDD=eu.readDatafromExcel("Sheet1", 4, 0);
 
-		//Name of org
-		System.out.println(name+" "+orgname+" "+phonenumber+" "+indDD+" "+ratingDD+" "+typeDD);
+		                                                           //Name of org
+		                                                  //System.out.println(name+" "+orgname+" "+phonenumber+" "+indDD+" "+ratingDD+" "+typeDD);
 
-		WebDriver driver = new ChromeDriver();
-		wdu.maximizewindow(driver);
-		driver.get(URL);
-		wdu.implicitwait(driver);
+		                                                    /*WebDriver driver = new ChromeDriver();
+		                                                        wdu.maximizewindow(driver);
+		                                                        driver.get(URL);
+		                                                       wdu.implicitwait(driver);*/
 		
 		//Login using LOGINPOMPAGE
 		
-		LoginPOMPage lp = new  LoginPOMPage(driver);
-		lp.loginToApp(UN, PWD);
+		//LoginPOMPage lp = new  LoginPOMPage(driver);
+		//lp.loginToApp(UN, PWD);
 		
 		HomePOMPage hp = new HomePOMPage(driver);
 		hp.getOrgBtn().click();
@@ -91,7 +92,7 @@ public class CreateOrgPOM {
 		
 		//LOGOUT
 		
-		hp.logoutFromApp();
+		hp.logoutFromApp(driver);
 		wdu.quit(driver);
 
 	}

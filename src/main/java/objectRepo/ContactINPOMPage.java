@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import generic.BaseClass;
+
 public class ContactINPOMPage {
             
 public ContactINPOMPage(WebDriver driver) {
@@ -66,6 +68,13 @@ public ContactINPOMPage(WebDriver driver) {
 
 	public WebElement getClickbtn(){
 		return clickbtn;
+	}
+	
+	@FindBy(xpath="//span[@class='dvHeaderText']")
+	private WebElement titletxt;
+
+	public WebElement getTitletxt(){
+		return titletxt;
 	}
 	
 	/*public void selectorg(String orgname) {

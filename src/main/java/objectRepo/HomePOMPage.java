@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import generic.WebDriverUtility;
 public class HomePOMPage {
 	
-	WebDriver driver;
-	WebDriverUtility wdu;
+	//WebDriver driver;
+	WebDriverUtility wdu = new WebDriverUtility();
 	
 	@FindBy(xpath="//a[text()='Organizations']")
     private WebElement orgbtn;
@@ -45,27 +45,29 @@ public class HomePOMPage {
     		
     }
     
-    public HomePOMPage(WebDriver driver) {
-    	
-    	                                                           //this.driver = driver;
-    	                                                          //PageFactory.initElements(driver, HomePOMPage.class);
-    	PageFactory.initElements(driver,this);
-    }
     
-    @FindBy(xpath="//td[contains(@onmouseout,'fnHideDrop')][1]")
-    private WebElement logoutbtn;
+    
+    @FindBy(xpath = "//img[contains(@src,'user.PNG')]")
+	private WebElement adminstrationImg;
       
-    @FindBy(xpath="//a[text()='Sign Out']")
-    private WebElement signoutbtn;
+    @FindBy(linkText = "Sign Out")
+	private WebElement signOutbtn;
     
     public WebElement getSignout()
     {
- 	   return signoutbtn;
+ 	   return signOutbtn;
     }
     
-    public void logoutFromApp()
+    public HomePOMPage(WebDriver driver)
     {
-    	wdu.movetoelement(driver, logoutbtn);
+    	
+    	//this.driver = driver;
+        PageFactory.initElements(driver,this);
+    }
+    
+    public void logoutFromApp(WebDriver driver)
+    {
+    	wdu.movetoelement(driver,adminstrationImg);
     	getSignout().click();
     }
     

@@ -71,14 +71,16 @@ public class ContactIntegrationPOMPage {
     	   	
     	   	cip.getSearchtb().sendKeys("Test1");
     	   	cip.getSearchbtn().click();
+    	   	//wdu.waitandclick(driver,"//table[@class='dvtContentSpace']//tbody//tbody//tbody/tr[5]/td[4]/input");
     	    cip.getOrglink().click();
     	    //mainwindow
     	    
     	   	wdu.switchToChildWindow(driver,"mainwin");    	   	
     	   	cip.getMobtb().sendKeys(mobnum);
     	   	cip.getLastname1().sendKeys(lastname);
+    	   	//wdu.waitandclick(driver,"//input[@type='submit'][1]");
     	   	cip.getClickbtn().click();
-    	   	WebElement title  = driver.findElement(By.xpath("//span[@class='dvHeaderText']"));
+    	   
     	   		   
     	   	if(driver.getTitle().contains("Contacts")){
     	   	     System.out.println("contact created successfully!!");
@@ -87,13 +89,9 @@ public class ContactIntegrationPOMPage {
     	   		   
     	   		 //LOGOUT
     	   			
-    	                hp.logoutFromApp();
+    	                hp.logoutFromApp(driver);
     	                wdu.quit(driver);
     	   		}
 
-	
-    	   		
-	
-	
-	
 }
+

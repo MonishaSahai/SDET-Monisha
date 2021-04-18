@@ -5,7 +5,8 @@ package generic;
 	import java.util.Set;
 	import java.util.concurrent.TimeUnit;
 
-	import org.openqa.selenium.By;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 	import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.WebElement;
 	import org.openqa.selenium.interactions.Actions;
@@ -227,6 +228,30 @@ import org.testng.Assert;
 		public void quit(WebDriver driver) 
 		{
 			driver.quit();
+		}
+		/**
+		 * Alert Handling
+		 * @param driver
+		 * @param alert String
+		 */
+		public String alertHandling(WebDriver driver) {
+			
+			Alert a = driver.switchTo().alert();
+			String msg= a.getText();
+			return msg;
+			
+		}
+		
+		/**
+		 * Alert Handling
+		 * @param driver
+		 * @param alert Handling
+		 */
+		public void alertHandling1(WebDriver driver) {
+			
+			Alert a = driver.switchTo().alert();
+			a.accept();
+			
 		}
 		
 }
