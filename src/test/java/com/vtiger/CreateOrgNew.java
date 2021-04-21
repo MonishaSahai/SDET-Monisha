@@ -22,11 +22,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import generic.ExcelUtility;
-import generic.FileUtility;
-import generic.Iconstants;
-import generic.JavaUtility;
-import generic.WebDriverUtility;
+import com.generic.ExcelUtility;
+import com.generic.FileUtility;
+import com.generic.Iconstants;
+import com.generic.JavaUtility;
+import com.generic.WebDriverUtility;
 
 public class CreateOrgNew {
 
@@ -46,12 +46,12 @@ public class CreateOrgNew {
 		String URL=fu.readDatafrompropfile(Iconstants.propfilepath, "url");
 
 		//Read Test Script Data from Excel 
-		String name= eu.readDatafromExcel("Sheet1", 0, 0);
+		String name= eu.fetchDatafromExcel("Sheet1", 0, 0);
 		String orgname=name+randomnumber;
-		String phonenumber= eu.readDatafromExcel("Sheet1", 1, 0);
-		String indDD= eu.readDatafromExcel("Sheet1", 2, 0);
-		String ratingDD= eu.readDatafromExcel("Sheet1", 3, 0);
-		String typeDD=eu.readDatafromExcel("Sheet1", 4, 0);
+		String phonenumber= eu.fetchDatafromExcel("Sheet1", 1, 0);
+		String indDD= eu.fetchDatafromExcel("Sheet1", 2, 0);
+		String ratingDD= eu.fetchDatafromExcel("Sheet1", 3, 0);
+		String typeDD=eu.fetchDatafromExcel("Sheet1", 4, 0);
 
 		System.out.println(name+" "+orgname+" "+phonenumber+" "+indDD+" "+ratingDD+" "+typeDD);
 		

@@ -3,14 +3,15 @@ package com.vtiger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-import generic.BaseClass;
+import com.generic.BaseClass;
+
 import objectRepo.CreateOppPOMPage;
 import objectRepo.HomePOMPage;
 import objectRepo.OpportiunityPOMPage;
 
-@Test
+
 public class CreateOpportunityusingContErasebuttonTC4 extends BaseClass {
-	       
+	       @Test
 	       public void createContactusingErasebutton() throws InterruptedException {
 	    	   
 	    	HomePOMPage hp = new HomePOMPage(driver);

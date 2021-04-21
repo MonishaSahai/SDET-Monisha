@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Suite" parallel="tests">
+  <test name="TestRunner-Chrome" preserve-order="true">
+  <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.vtiger.CreateOpportiunityTC1"/>
+      <class name="com.vtiger.CreateOppwithOrgTC3"/>
+      </classes>
+      </test> <!-- Test -->
+      
+      
+      <test name="TestRunner-firefox" preserve-order="true">
+      <parameter name="browser" value="firefox"/>
+      <classes>
+      <class name="com.vtiger.CreateOpportiunityTC1"/>
+      <class name="com.vtiger.CreateOppwithOrgTC3"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

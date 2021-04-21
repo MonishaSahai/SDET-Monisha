@@ -3,15 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.vtiger.CreateOpportunityusingContErasebuttonTC4">
+      <class name="com.vtiger.CreateOpportiunityTC1">
         <methods>
+          <include name="createOpportiunity"/>
+          <include name="beforesuite"/>
+          <include name="afterSuite"/>
+          <include name="closeBrowser"/>
+          <include name="logoutfromApp"/>
           <include name="launchBrowser"/>
           <include name="logintoapp"/>
-          <include name="beforesuite"/>
-          <include name="createContactusingErasebutton"/>
-          <include name="afterSuite"/>
         </methods>
-      </class> <!-- com.vtiger.CreateOpportunityusingContErasebuttonTC4 -->
+      </class> <!-- com.vtiger.CreateOpportiunityTC1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

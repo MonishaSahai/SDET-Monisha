@@ -9,11 +9,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-import generic.ExcelUtility;
-import generic.FileUtility;
-import generic.Iconstants;
-import generic.JavaUtility;
-import generic.WebDriverUtility;
+import com.generic.ExcelUtility;
+import com.generic.FileUtility;
+import com.generic.Iconstants;
+import com.generic.JavaUtility;
+import com.generic.WebDriverUtility;
+
 import objectRepo.ContactPOMPage;
 import objectRepo.HomePOMPage;
 import objectRepo.LoginPOMPage;
@@ -39,9 +40,9 @@ public class ContactIntegrationPOMPage {
 			String URL=fu.readDatafrompropfile(Iconstants.propfilepath, "url");
 
 			
-			String nameLast = eu.readDatafromExcel("Sheet2", 2, 0);
+			String nameLast = eu.fetchDatafromExcel("Sheet2", 2, 0);
     		String lastname = nameLast+randomnumber;
-    		String num = eu.readDatafromExcel("Sheet2", 3, 0);
+    		String num = eu.fetchDatafromExcel("Sheet2", 3, 0);
     		String mobnum = num+randomnumber;
 			
 			

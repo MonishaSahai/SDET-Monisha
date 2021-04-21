@@ -10,11 +10,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-import generic.ExcelUtility;
-import generic.FileUtility;
-import generic.Iconstants;
-import generic.JavaUtility;
-import generic.WebDriverUtility;
+
+import com.generic.ExcelUtility;
+import com.generic.FileUtility;
+import com.generic.Iconstants;
+import com.generic.JavaUtility;
+import com.generic.WebDriverUtility;
 
 	public class Create_ContactNew {
 		
@@ -33,10 +34,10 @@ import generic.WebDriverUtility;
     		String URL=fu.readDatafrompropfile(Iconstants.propfilepath, "url");
     		
     		//Read Test Script Data from Excel
-    		String salutation= eu.readDatafromExcel("Sheet2", 0, 0);
-    		String name= eu.readDatafromExcel("Sheet2", 1, 0);
+    		String salutation= eu.fetchDatafromExcel("Sheet2", 0, 0);
+    		String name= eu.fetchDatafromExcel("Sheet2", 1, 0);
     		String firstname= name+randomnumber;
-    		String nameLast= eu.readDatafromExcel("Sheet2", 2, 0);
+    		String nameLast= eu.fetchDatafromExcel("Sheet2", 2, 0);
     		String lastname= nameLast+randomnumber;
     		
     		System.out.println(salutation +  name +  nameLast);

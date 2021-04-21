@@ -1,4 +1,4 @@
-package generic;
+package com.generic;
 
 
 	import java.io.FileInputStream;
@@ -23,7 +23,7 @@ package generic;
 		 * @throws EncryptedDocumentException
 		 * @throws IOException
 		 */
-		public String readDatafromExcel(String sheetname,int rownum,int cellnum) throws EncryptedDocumentException, IOException
+		public String fetchDatafromExcel(String sheetname,int rownum,int cellnum) throws EncryptedDocumentException, IOException
 		{
 			FileInputStream fis = new FileInputStream(Iconstants.excelpath);
 			Workbook wb=WorkbookFactory.create(fis);

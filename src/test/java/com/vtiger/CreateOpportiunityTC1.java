@@ -1,17 +1,20 @@
 package com.vtiger;
 
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import generic.BaseClass;
+import com.generic.BaseClass;
+
 import objectRepo.CreateOppPOMPage;
 import objectRepo.HomePOMPage;
 import objectRepo.OpportiunityPOMPage;
 
+@Listeners(com.generic.ListenersImplementation1.class)
 public class CreateOpportiunityTC1 extends BaseClass {
 	
 	
-	@Test
+	@Test(groups = {"SMOKE-TEST","Regression-test"})
 	public void createOpportiunity() throws InterruptedException {
 		
 		
@@ -27,7 +30,7 @@ public class CreateOpportiunityTC1 extends BaseClass {
 	wdu.selectdropdownbyvalue(cop.getListbox(),"Contacts");
 	cop.getContactbtn().click();
 	wdu.switchToChildWindow(driver,"//td[text()='Contact']");
-	Thread.sleep(1000);
+	//Thread.sleep(1000);
 	cop.getContacttxtchild().click();
 	wdu.switchToChildWindow(driver,"//input[@type='submit'][1]");
 	cop.getSavebtn().click();

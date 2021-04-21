@@ -1,4 +1,4 @@
-package generic;
+package com.generic;
 
 import java.io.IOException;
 import java.sql.Connection;

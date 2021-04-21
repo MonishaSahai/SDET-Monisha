@@ -11,11 +11,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-import generic.ExcelUtility;
-import generic.FileUtility;
-import generic.Iconstants;
-import generic.JavaUtility;
-import generic.WebDriverUtility;
+import com.generic.ExcelUtility;
+import com.generic.FileUtility;
+import com.generic.Iconstants;
+import com.generic.JavaUtility;
+import com.generic.WebDriverUtility;
 
 public class WindowHandle {
 	JavaUtility jv = new JavaUtility();

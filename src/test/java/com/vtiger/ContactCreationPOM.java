@@ -8,12 +8,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import generic.BaseClass;
-import generic.ExcelUtility;
-import generic.FileUtility;
-import generic.Iconstants;
-import generic.JavaUtility;
-import generic.WebDriverUtility;
+import com.generic.BaseClass;
+import com.generic.ExcelUtility;
+import com.generic.FileUtility;
+import com.generic.Iconstants;
+import com.generic.JavaUtility;
+import com.generic.WebDriverUtility;
+
 import objectRepo.ContactPOMPage;
 import objectRepo.CreateContactPOMPage;
 import objectRepo.HomePOMPage;
@@ -36,9 +37,9 @@ public class ContactCreationPOM extends BaseClass{
 		
 		                                     //Read Test Script Data from Excel
 		                                       String salutation= eu.readDatafromExcel("Sheet2", 0, 0);*/
-	String name= eu.readDatafromExcel("Sheet2", 1, 0);
+	String name= eu.fetchDatafromExcel("Sheet2", 1, 0);
     String firstname= name+randomnumber;
-    String nameLast= eu.readDatafromExcel("Sheet2", 2, 0);
+    String nameLast= eu.fetchDatafromExcel("Sheet2", 2, 0);
     String lastname= nameLast+randomnumber;
 		
 		                                       //System.out.println(salutation +  name +  nameLast);*/

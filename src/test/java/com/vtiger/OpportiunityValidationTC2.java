@@ -3,7 +3,8 @@ package com.vtiger;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import generic.BaseClass;
+import com.generic.BaseClass;
+
 import objectRepo.CreateOppPOMPage;
 import objectRepo.HomePOMPage;
 import objectRepo.OpportiunityPOMPage;

@@ -2,14 +2,15 @@ package com.vtiger;
 
 import org.testng.annotations.Test;
 
-import generic.BaseClass;
+import com.generic.BaseClass;
+
 import objectRepo.CreateOppPOMPage;
 import objectRepo.HomePOMPage;
 import objectRepo.OpportiunityPOMPage;
 
-@Test
-public class CreateOpportunityUsingOrgErasebuttonTC5 extends BaseClass {
 
+public class CreateOpportunityUsingOrgErasebuttonTC5 extends BaseClass {
+	@Test
 	public void createOppusingOrgErasebutton() throws InterruptedException {
 		HomePOMPage hp = new HomePOMPage(driver);
 		hp.getOppBtn().click();

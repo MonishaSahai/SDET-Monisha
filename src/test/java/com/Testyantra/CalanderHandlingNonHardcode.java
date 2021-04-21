@@ -13,7 +13,7 @@ package com.Testyantra;
 	import org.openqa.selenium.support.ui.WebDriverWait;
 
 	public class CalanderHandlingNonHardcode {
-		public static void main(String[]args) {
+		public static void main(String[]args) throws InterruptedException {
 			Date d = new Date();
 			String cursysdate = d.toString();
 			System.out.println(cursysdate);
@@ -43,7 +43,7 @@ package com.Testyantra;
 	  	  driver.findElement(By.xpath("//input[@id='toCity']")).sendKeys("PNQ");
 	  	  driver.findElement(By.xpath("//div[contains(text(),'PNQ')]")).click();
 	  	  
-	  	  
+	  	  Thread.sleep(4000);
 	  	  WebElement e = driver.findElement(By.xpath("//span[text()='DEPARTURE']"));
 	  	  wait.until(ExpectedConditions.elementToBeClickable(e)).click();
 	  	  
